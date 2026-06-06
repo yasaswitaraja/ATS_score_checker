@@ -1,0 +1,369 @@
+/* Dark theme colors */
+:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --border: #2a2d3a;
+  --text: #e4e4e7;
+  --text-muted: #9ca3af;
+  --primary: #6366f1;
+  --primary-hover: #818cf8;
+  --green: #22c55e;
+  --red: #ef4444;
+  --yellow: #eab308;
+  --blue: #60a5fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: var(--text-muted);
+}
+
+/* Main layout */
+.main {
+  flex: 1;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Card */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+/* Form fields */
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+/* File upload */
+.file-label input[type="file"] {
+  display: none;
+}
+
+.file-box {
+  display: block;
+  padding: 32px;
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  text-align: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color 0.2s;
+  margin-bottom: 16px;
+}
+
+.file-box:hover {
+  border-color: var(--primary);
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Error message */
+.error {
+  color: var(--red);
+  font-size: 0.875rem;
+  margin-bottom: 12px;
+}
+
+/* Info notice */
+.notice {
+  background: rgba(234, 179, 8, 0.1);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  color: var(--yellow);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+}
+
+/* Score display */
+.score-card {
+  text-align: center;
+}
+
+.score-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 6px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.score-high { border-color: var(--green); }
+.score-medium { border-color: var(--yellow); }
+.score-low { border-color: var(--red); }
+
+.score-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.score-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.summary {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.925rem;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li::before {
+  content: "→ ";
+  color: var(--text-muted);
+}
+
+/* Colored headings */
+.text-green { color: var(--green); }
+.text-red { color: var(--red); }
+.text-yellow { color: var(--yellow); }
+.text-blue { color: var(--blue); }
+
+/* Keyword tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.tag-red {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--red);
+}
+
+.tag-green {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--green);
+}
+
+.tag-yellow {
+  background: rgba(234, 179, 8, 0.15);
+  color: var(--yellow);
+}
+
+/* Section titles in form */
+.section-title {
+  margin-top: 8px;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+/* Verdict badge */
+.verdict {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.verdict-good { background: rgba(34, 197, 94, 0.2); color: var(--green); }
+.verdict-ok { background: rgba(96, 165, 250, 0.2); color: var(--blue); }
+.verdict-warn { background: rgba(234, 179, 8, 0.2); color: var(--yellow); }
+.verdict-bad { background: rgba(239, 68, 68, 0.2); color: var(--red); }
+
+.keyword-match {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.keyword-match strong {
+  color: var(--text);
+}
+
+/* Knockout section */
+.knockout {
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+/* ATS breakdown bars */
+.breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.breakdown-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.breakdown-header small {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.bar-track {
+  height: 8px;
+  background: var(--bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+.bar-high { background: var(--green); }
+.bar-medium { background: var(--yellow); }
+.bar-low { background: var(--red); }
+
+.breakdown-detail {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .score-circle {
+    width: 110px;
+    height: 110px;
+  }
+
+  .score-number {
+    font-size: 2rem;
+  }
+}
